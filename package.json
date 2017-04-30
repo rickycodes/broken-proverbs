@@ -1,0 +1,16 @@
+{
+  "name": "broken-sayings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lodash.first": "^3.0.0",
+    "lingo": "^0.0.5",
+    "pos": "^0.4.2",
+    "lodash.get": "^4.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
