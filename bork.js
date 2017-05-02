@@ -20,6 +20,7 @@ module.exports = (saying) => {
   return tagged.map(word => first(word))
     .join(' ')
     .replace(` ' `, `'`)
+    .replace(` '`, `'`)
     .replace(' .', '.')
     .replace(' ,', ',')
     .toLowerCase()
