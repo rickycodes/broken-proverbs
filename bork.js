@@ -5,9 +5,9 @@ const swap = require('./swap.js')
 module.exports = (saying) => {
   const words = new pos.Lexer().lex(saying)
   const tagged = new pos.Tagger().tag(words)
-  const nouns = tagged.map((tag, index) => {
-    return first(tag).length > 1 && /NN/.test(tag[1]) && { index, tag }
-  }).filter(needle => needle)
+  const nouns = tagged.map((tag, index) =>
+    first(tag).length > 1 && /NN/.test(tag[1]) && { index, tag }
+  ).filter(needle => needle)
 
   nouns.forEach((noun, index) => {
     if ((index % 2) === 0) {
@@ -17,5 +17,10 @@ module.exports = (saying) => {
     }
   })
 
-  return tagged.map(word => first(word)).join(' ').toLowerCase().replace(` ' `, `'`)
+  return tagged.map(word => first(word))
+    .join(' ')
+    .replace(` ' `, `'`)
+    .replace(' .', '.')
+    .replace(' ,', ',')
+    .toLowerCase()
 }
